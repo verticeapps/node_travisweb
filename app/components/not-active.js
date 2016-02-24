@@ -1,3 +1,9 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend();
+const { service } = Ember.inject;
+const { alias } = Ember.computed;
+
+export default Ember.Component.extend({
+  auth: service(),
+  user: alias('auth.currentUser')
+});

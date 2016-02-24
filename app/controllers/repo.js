@@ -2,17 +2,19 @@ import Ember from 'ember';
 import { githubRepo, statusImage } from 'travis/utils/urls';
 import config from 'travis/config/environment';
 
+const { service, controller } = Ember.inject;
+const { alias } = Ember.computed;
 
 export default Ember.Controller.extend({
-  updateTimesService: Ember.inject.service('updateTimes'),
-  popup: Ember.inject.service(),
+  updateTimesService: service('updateTimes'),
+  popup: service(),
 
-  jobController: Ember.inject.controller('job'),
-  buildController: Ember.inject.controller('build'),
-  buildsController: Ember.inject.controller('builds'),
-  reposController: Ember.inject.controller('repos'),
-  reposBinding: 'reposController.repos',
-  currentUserBinding: 'auth.currentUser',
+  jobController: controller('job'),
+  buildController: controller('build'),
+  buildsController: controller('builds'),
+  reposController: controller('repos'),
+  repos: alias('reposController.repos'),
+  currentUser: alias('auth.currentUser'),
 
   classNames: ['repo'],
 

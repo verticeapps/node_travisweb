@@ -1,11 +1,15 @@
 import Ember from 'ember';
 import config from 'travis/config/environment';
 
+const { alias } = Ember.computed;
+const { service } = Ember.inject;
+
 export default Ember.Controller.extend({
-  userBinding: 'auth.currentUser',
-  store: Ember.inject.service(),
-  storage: Ember.inject.service(),
-  currentUserBinding: 'auth.currentUser',
+  auth: service(),
+  store: service(),
+  storage: service(),
+
+  user: alias('auth.currentUser'),
 
   userName: function() {
     return this.get('user.name') || this.get('user.login');

@@ -2,11 +2,17 @@ import Ember from 'ember';
 import config from 'travis/config/environment';
 import { hasPermission, hasPushPermission } from 'travis/utils/permission';
 
+const { service } = Ember.inject;
+const { alias } = Ember.computed;
+
 export default Ember.Component.extend({
-  popup: Ember.inject.service(),
+  auth: service(),
+  popup: service(),
   classNames: ['option-button'],
   classNameBindings: ['isOpen:display'],
   isOpen: false,
+
+  currentUser: alias('auth.currentUser'),
 
   click(event) {
     if ($(event.target).is('a') && $(event.target).parents('.settings-dropdown').length) {      

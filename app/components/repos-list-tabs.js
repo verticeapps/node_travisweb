@@ -1,9 +1,12 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
-  auth: Ember.inject.service(),
+const { service } = Ember.inject;
+const { alias } = Ember.computed;
 
-  currentUserBinding: 'auth.currentUser',
+export default Ember.Component.extend({
+  auth: service(),
+
+  currentUser: alias('auth.currentUser'),
 
   classRecent: function() {
     if (this.get('tab') === 'recent') {

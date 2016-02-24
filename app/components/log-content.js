@@ -4,6 +4,9 @@ import LogFolder from 'travis/utils/log-folder';
 import config from 'travis/config/environment';
 import { plainTextLog as plainTextLogUrl } from 'travis/utils/urls';
 
+const { service } = Ember.inject;
+const { alias } = Ember.computed;
+
 Log.DEBUG = false;
 
 Log.LIMIT = 10000;
@@ -59,10 +62,12 @@ Object.defineProperty(Log.Limit.prototype, 'limited', {
 });
 
 export default Ember.Component.extend({
-  popup: Ember.inject.service(),
+  auth: service(),
+  popup: service(),
   classNameBindings: ['logIsVisible:is-open'],
   logIsVisible: false,
-  currentUserBinding: 'auth.currentUser',
+
+  currentUser: alias('auth.currentUser'),
 
   didInsertElement() {
     if (Log.DEBUG) {

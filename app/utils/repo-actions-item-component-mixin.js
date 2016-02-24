@@ -1,8 +1,14 @@
 import Ember from 'ember';
 
+const { service } = Ember.inject;
+const { alias } = Ember.computed;
+
 export default Ember.Mixin.create({
+  auth: service(),
   restarting: false,
   cancelling: false,
+
+  user: alias('auth.currentUser'),
 
   userHasPermissionForRepo: function() {
     var repo, user;

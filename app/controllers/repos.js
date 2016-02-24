@@ -2,6 +2,9 @@ import Ember from 'ember';
 import Repo from 'travis/models/repo';
 import Config from 'travis/config/environment';
 
+const { service, controller } = Ember.inject;
+const { alias } = Ember.computed;
+
 var sortCallback = function(repo1, repo2) {
   // this function could be made simpler, but I think it's clearer this way
   // what're we really trying to achieve
@@ -50,8 +53,9 @@ var sortCallback = function(repo1, repo2) {
 
 
 var Controller = Ember.Controller.extend({
-  ajax: Ember.inject.service(),
-  updateTimesService: Ember.inject.service('updateTimes'),
+  auth: service(),
+  ajax: service(),
+  updateTimesService: service('updateTimes'),
 
   actions: {
     activate: function(name) {
@@ -82,8 +86,8 @@ var Controller = Ember.Controller.extend({
   },
 
   isLoaded: false,
-  repoController: Ember.inject.controller('repo'),
-  currentUserBinding: 'auth.currentUser',
+  repoController: controller('repo'),
+  currentUser: alias('auth.currentUser'),
 
   selectedRepo: function() {
     return this.get('repoController.repo.content') || this.get('repoController.repo');
