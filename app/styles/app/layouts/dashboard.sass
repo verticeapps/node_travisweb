@@ -23,13 +23,18 @@
   margin-bottom: 4rem
 
 .starred-empty
-  border: dotted 1px $pebble-grey
+  border: dotted 1px rgba($cement-grey, 0.2)
   border-radius: 2px
   text-align: center
   padding: 2rem 0
-  font-size: 20px
+  font-size: 18px
   color: $cement-grey
-
+  span
+    @extend %icon-star
+    padding-left: 2em
+    background-size: 24px 24px
+    background-repeat: no-repeat
+    
 .dash-star
   &:hover,
   &:active

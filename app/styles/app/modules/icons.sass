@@ -92,12 +92,14 @@
   @extend %icon
   background-image: inline-image('stroke-icons/icon-builds.svg')
 
-%icon-line-commit,
 %icon-github
   background-image: inline-image('stroke-icons/icon-github.svg')
+%icon-github-white
+  background-image: inline-image('stroke-icons/icon-github-white.svg')
+  
 .icon-line-commit
   @extend %icon
-  @extend %icon-line-commit
+  @extend %icon-github
 
 %icon-line-eye
   background-image:inline-image('stroke-icons/icon-seemore.svg')
@@ -117,7 +119,7 @@
     position: 3px 3px
     size: auto 10px
   display: inline-block
-  border: solid 1px #E4E6E6
+  border: solid 1px $pebble-grey
   border-radius: 50%
   @extend %icon-line-question
   &:hover
@@ -211,6 +213,9 @@
   text-indent: 999px
   overflow: hidden
 
+%icon-star
+  background-image: inline-image('stroke-icons/icon-star.svg')
+  
 .icon-star
   @extend %icon
   width: 18px
