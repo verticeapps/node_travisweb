@@ -7,20 +7,6 @@
 .top.landing-page .topbar
   background-color: #fff
 
-  .button--signin
-    background-color: #ffffff
-    background-image: inline-image('landing-page/signingithub.svg')
-    background-size: 16px 16px
-    border: 2px solid #e4e7e7
-    color: #a0a8a8
-  .button--signingin
-    border: 2px solid #3FA75F
-  .button--signin:hover
-    background-color: #73c78d
-    background-image: inline-image('landing-page/signingithub-hover.svg')
-    border: 2px solid #73c78d
-    color: #fff
-
 .landing-centered-wrapper
   .button
     .sync-spinner
@@ -37,8 +23,13 @@
     font-size: 5em
     line-height: 1em
     font-weight: 300
-    color: #8f9294
+    color: rgba($asphalt-grey, .8)
     margin-bottom: 0
+
+  .hero,
+  .recent-builds,
+  .features-list
+    background-color: $pebble-grey
 
   .hero, .oss-testing, .customers, .recent-builds, .free-for-oss, .private-repos, .features-list, .build-flows, .user-testimonials
     padding: 70px 0 70px 0
@@ -52,11 +43,11 @@
       font-size: 3.3em
       line-height: 1.15em
       font-weight: 300
-      color: #39a85b
+      color: $turf-green
 
     p
       line-height: 1.5em
-      font-color: #606162
+      font-color: $asphalt-grey
       font-size: 1.7em
 
   .hero.z-1
@@ -78,13 +69,12 @@
     margin-bottom: -192px
 
   #laptop img
-    border: 2px solid #d8dadc
+    border: 2px solid rgba($cement-grey, 0.2)
     border-radius: 2px
 
   .hero
-    background-color: #f6f6f6
     h1
-      color: #339999
+      color: $oxide-blue
       line-height: 1.2em
       margin-bottom: 0
 
@@ -96,17 +86,15 @@
       display: none
 
     .button
-      background-color: #39a85b
+      background-color: $turf-green
       color: #fff
       font-size: 2em
       font-weight: 300
-      padding: 0.5em
       margin: 1.3em 0 1.3em 0
       border-radius: 2px
-      border: 0
 
       &:hover
-        background-color: #73c78d
+        background-color: rgba($turf-green, .8)
 
     .sign-in-mascot
       padding-right: 10px
@@ -139,18 +127,14 @@
       padding: 0 0 0 12%
 
   .recent-builds
-    background-color: #f6f6f6
     min-height: 44rem
 
   .recent-builds-text
     text-align: center
     h2
-      color: #db4141
+      color: $brick-red
       text-align: right
       margin: 0
-
-    a
-      color: #828282
 
     p
       text-align: right
@@ -196,7 +180,7 @@
     text-align: center
 
     h2
-      color: #339999
+      color: $oxide-blue
       margin: 0
       text-align: right
 
@@ -206,7 +190,12 @@
       text-align: right
 
     a
-      text-decoration: underline
+      text-decoration: none
+      border-bottom: 1px solid $asphalt-grey
+      transition: all 200ms ease
+      &:hover
+        border-bottom: none
+        color: $cement-grey
 
     .mobile-envelope
       display: none
@@ -215,7 +204,6 @@
       display: inline-block
 
   .features-list
-    background-color: #f6f6f6
 
     h2
       margin: 0
@@ -223,16 +211,11 @@
     h3
       font-size: 1.4em
       font-weight: 300
-      color: #413c3c
-      text-align: center
       margin-bottom: 35px
       padding-top: 40px
 
     p
-      font-size: 1.15em
-      font-weight: 300
-      color: #606162
-      text-align: center
+      font-size: 16px
 
     br.mobile-break
       display: none
@@ -278,7 +261,6 @@
       margin-top: 1.6rem;
 
     li
-      font-color: #606162
       font-size: 1.7em
       line-height: 1.7em
       &:before
@@ -293,7 +275,7 @@
     text-align: center
 
     h2
-      color: #909295
+      color: $cement-grey
 
     h2#pr-bf-margin
       margin-top: 90px
@@ -304,9 +286,8 @@
         width: 120px
 
         p
-          font-size: 1em
+          font-size: 13px
           line-height: 1.5em
-          color: #5f6062
 
     .divider-line-horizontal
       width: 50px
@@ -322,13 +303,11 @@
     margin-bottom: 50px
 
     h2
-      color: #418793
+      color: $oxide-blue
       text-align: right
 
     p
       font-size: 1.2em
-      font-weight: 300
-      color: #606162
       margin: 0
       display: inline-block
 
@@ -407,7 +386,7 @@
     .build-flows .branch-bf .divider-line-vertical
       width: 3px
       height: 40px
-      background: #eaeaec
+      background: $pebble-grey
       display: inline-block
       margin-bottom: 10px
 
@@ -471,7 +450,6 @@
   h2
     padding-left: .5rem
     font-size: 18px
-
 
 .landing,
 .landing-pro

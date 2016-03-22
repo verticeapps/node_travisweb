@@ -1,11 +1,7 @@
 import Ember from 'ember';
 import { githubCommit as githubCommitUrl } from 'travis/utils/urls';
 import config from 'travis/config/environment';
-<<<<<<< HEAD
 import { hasAdminPermission, hasPushPermission } from 'travis/utils/permission';
-=======
-import Permissions from 'travis/mixins/permissions';
->>>>>>> add permissions mixin to dashboard row
 
 export default Ember.Component.extend(Permissions, {
   tagName: 'li',
