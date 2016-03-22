@@ -3,7 +3,7 @@ import { githubCommit as githubCommitUrl } from 'travis/utils/urls';
 import config from 'travis/config/environment';
 import { hasAdminPermission, hasPushPermission } from 'travis/utils/permission';
 
-export default Ember.Component.extend(Permissions, {
+export default Ember.Component.extend({
   tagName: 'li',
   classNameBindings: ['repo.default_branch.last_build.state'],
   classNames: ['rows', 'rows--dashboard'],

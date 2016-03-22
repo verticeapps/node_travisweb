@@ -23,10 +23,12 @@
         <h3 class="label">Default branch</h3>
         <p class="row-content color">
           {{request-icon event=repo.default_branch.last_build.event_type state=repo.default_branch.last_build.state}}
-          {{repo.default_branch.name}} is {{repo.default_branch.last_build.state}}
+          {{repo.default_branch.name}}
+          {{#if repo.default_branch.last_build.state}}is {{repo.default_branch.last_build.state}}{{/if}}
         </p>
       </section>
 
+{{#if repo.default_branch.last_build}}
       <section class="dash-last-build">
         <div>
           <h3 class="label">Last build</h3>
@@ -61,6 +63,7 @@
           </p>
         </div>
       </section>
+{{/if}}
 
       {{#if displayMenuTofu}}
         <div class="dash-menu">
