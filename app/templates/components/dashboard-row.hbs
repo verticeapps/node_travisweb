@@ -95,11 +95,11 @@
       {{/if}}
     {{else}}
       <div class="dash-button">
-        {{#unless displayActivateLink}}
+        {{#if displayActivateLink}}
           <button type="button" class="activate-repo-button is-active" {{action 'activateRepo'}}>Activate repository</button>
         {{else}}
           <p class="activate-repo-button" data-tooltip="You need admin rights to activate a repository">Actiavte repository</p>
-        {{/unless}}
+        {{/if}}
       </div>
     {{/if}}
     </div>
