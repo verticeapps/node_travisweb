@@ -123,3 +123,51 @@
     white-space: normal
     &:before
       right: .8em
+
+
+// trying to rewrite
+
+$tooltip-spacing: 4em
+$tooltip-arrow-width: 1em
+  
+[data-tooltip]
+  position: relative
+  background-color: pink
+  &:after
+    content: attr(data-tooltip)
+    display: block
+    position: absolute
+    background: $asphalt-grey
+    padding: 0.5em
+    color: white
+    border-radius: 2px
+    bottom: $tooltip-spacing
+    left: 0
+    right: 0
+    white-space: normal
+    margin: auto
+    font-size: 12px
+  &:before
+    content: ""
+    display: block
+    width: $tooltip-arrow-width
+    height: $tooltip-arrow-width
+    transform: rotate(45deg)
+    position: absolute
+    left: 0
+    right: 0
+    bottom: $tooltip-spacing - $tooltip-arrow-width
+    margin: auto
+    background-color: $asphalt-grey
+
+  &:after,
+  &:before
+    display: none
+
+  &:hover,
+  &:active
+    &:after,
+    &:before
+      display: block
+
+       

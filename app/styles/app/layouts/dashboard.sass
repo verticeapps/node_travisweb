@@ -47,6 +47,7 @@
       fill: $canary-yellow
 
 .dash-header
+  position: relative
   order: 2
   flex: 0 0 20%
 
@@ -102,9 +103,9 @@
 .dash-last-build
   display: flex
   order: 4
-  flex: 0 0 55%
+  flex: 1 0 30%
   flex-flow: row nowrap
-  justify-content: space-between
+  justify-content: flex-start
 
   @media #{$small-only}
     margin-top: 2em
@@ -114,3 +115,17 @@
 
     > div
       flex: 0 0 33%
+
+.dash-button
+  order: 5
+
+.activate-repo-button
+  @extend %button
+  background-color: $pebble-grey
+  color: $cement-grey
+  font-size: 14px
+  cursor: default
+  &.is-active:hover
+    background-color: $turf-green
+    color: white
+    cursor: pointer

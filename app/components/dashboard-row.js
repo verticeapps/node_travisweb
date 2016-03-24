@@ -5,7 +5,7 @@ import { hasAdminPermission, hasPushPermission } from 'travis/utils/permission';
 
 export default Ember.Component.extend({
   tagName: 'li',
-  classNameBindings: ['repo.default_branch.last_build.state'],
+  classNameBindings: ['repo.default_branch.last_build.state', 'repo.active:is-active'],
   classNames: ['rows', 'rows--dashboard'],
   isLoading: false,
   isTriggering: false,

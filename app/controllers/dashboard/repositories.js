@@ -28,6 +28,7 @@ export default Ember.Controller.extend({
         return item.slug.match(new RegExp(filter));
       });
     }
+    this.inactive();
   }.property('filter', 'model', 'org'),
 
   updateFilter() {

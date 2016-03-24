@@ -12,7 +12,7 @@ export default TravisRoute.extend({
   model() {
     var apiEndpoint;
     apiEndpoint = config.apiEndpoint;
-    return $.ajax(apiEndpoint + '/v3/repos?repository.active=true&include=repository.default_branch,build.commit', {
+    return $.ajax(apiEndpoint + '/v3/repos?repository.active=false&include=repository.default_branch,build.commit', {
       headers: {
         Authorization: 'token ' + this.auth.token()
       }
