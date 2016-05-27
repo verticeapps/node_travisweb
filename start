@@ -1,0 +1,10 @@
+#!/bin/sh
+ sudo invoke-rc.d shellinabox stop
+ 
+ npm install -g ember-cli
+ bower install --allow-root
+ npm install -g watchman
+ npm rebuild node-sass
+ npm install
+ ember serve
+
