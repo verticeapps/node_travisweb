@@ -17,8 +17,8 @@ Now you can run the server:
 And open http://localhost:4200 in the browser.
 
 Alternatively you can run `ember build --watch` and start the server with `waiter/script/server`
-###To deploy your App 
-[![img](https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA2.png)](https://console.megamafrica.com)
+###To deploy your App
+[![img](https://s3-ap-southeast-1.amazonaws.com/megampub/images/vertice/DEPLOY-TO-MEGAM-VERTICE2.png)](https://www.megam.io)
 
 ### Running the app in private repos mode
 
